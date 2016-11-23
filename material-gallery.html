@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="material-item.html">
+
+<dom-module id="material-gallery">
+    <style>
+      :host{
+        width:100%;
+        display:-webkit-flex;
+        display:flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap:wrap;
+        -webit-justify-content:var(--material-gallery-justitication, space-between);
+        justify-content:var(--material-gallery-justitication, space-between);
+        -webkit-align-items: var(--material-gallery-alignment, flex-start);
+        align-items: var(--material-gallery-alignment, flex-start);
+      }
+      @media only screen and (max-width: 640px){
+        :host{
+          -webit-justify-content:var(--material-gallery-phone-justitication, center);
+          justify-content:var(--material-gallery-phone-justitication, center);
+        }
+      }
+    </style>
+    <template>
+      <content></content>
+    </template>
+</dom-module>
+<script>
+
+    Polymer({
+        is: 'material-gallery'
+    });
+
+</script>

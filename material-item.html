@@ -1,0 +1,57 @@
+<link rel="import" href="material-card.html">
+<dom-module id="material-item">
+  <style>
+    :host{
+      display:-webkit-flex;
+      display:flex;
+      -webkit-justify-content:center;
+      justify-content:center;
+      -webkit-align-items:flex-start;
+      align-items:flex-start;
+      width:var(--material-item-width, 30%);
+      margin:var(--material-item-margin, 0 0 2em 0);
+    }
+    :host ::content>a{
+      display:-webkit-flex;
+      display:flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webit-justify-content:var(--material-item-justitication, flex-end);
+      justify-content:var(--material-item-justitication, flex-end);
+      -webkit-align-items: var(--material-item-alignment, center);
+      align-items: var(--material-item-alignment, center);
+    }
+    :host ::content>a span{
+      margin-bottom:var(--material-item-child-margin, 4px);
+      max-width:100%;
+    }
+    :host ::content>a>span{
+      width:var(--material-item-span-width, 80%);
+      line-height:var(--material-item-span-line-height, 1.25);
+      text-align:var(--material-item-span-align, center);
+    }
+    @media only screen and (max-width: 1024px) and (min-width: 640px){
+      :host{
+        width:var(--material-item-tablet-width, 40%);
+      }
+      :host:last-child{
+        margin-right:var(--material-item-last-tablet-child-margin-right, 0);
+      }
+    }
+    @media only screen and (max-width: 640px) {
+      :host{
+        width:var(--material-item-phone-width, 100%);
+      }
+    }
+  </style>
+  <template>
+    <content></content>
+  </template>
+</dom-module>
+<script>
+
+  Polymer({
+    is: 'material-item'
+  });
+
+</script>

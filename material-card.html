@@ -1,0 +1,57 @@
+<dom-module id="material-card">
+  <style>
+    :host{
+      height: var(--material-card-height,350px);
+      width: var(--material-card-width,350px);
+      max-width:100%;
+      padding:var(--material-card-padding,10px);
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      align-items: center;
+      background: #fff;
+      margin-bottom:var(--material-card-margin-bottom,10px);
+      box-shadow: var(--material-card-box-shadow,0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4));
+      position:relative;
+    }
+    :host>div{
+      overflow:hidden;
+      height:calc( var(--material-card-height,350px) - 20px);
+    }
+    @media only screen and (max-width: 1024px) and (min-width: 640px){
+      :host{
+        height: var(--material-card-tablet-height,320px);
+        width: var(--material-card-tablet-width,320px);
+      }
+      :host>div{
+        overflow:hidden;
+        height:calc( var(--material-card-tablet-height,320px) - 20px);
+      }
+    }
+    @media only screen and (max-width: 640px){
+      :host {
+        height: auto;
+        width: auto;
+      }
+      :host>div{
+        overflow:hidden;
+        height:auto;
+      }
+    }
+
+  </style>
+  <template>
+    <div>
+      <content></content>
+    </div>
+  </template>
+</dom-module>
+<script>
+
+  Polymer({
+    is: 'material-card'
+  });
+
+</script>
